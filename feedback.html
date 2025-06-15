@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - HostelManager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 21h18"/>
+                    <path d="M5 21V7l8-4v18"/>
+                    <path d="M19 21V11l-6-4"/>
+                </svg>
+                <span class="brand-text">HostelManager</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="registration.html" class="nav-link">Registration</a>
+                <a href="fee-management.html" class="nav-link">Fee Management</a>
+                <a href="room-occupancy.html" class="nav-link">Room Occupancy</a>
+                <a href="feedback.html" class="nav-link active">Feedback</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container">
+            <div id="feedback-form" class="card">
+                <div class="card-header">
+                    <h2>Feedback System</h2>
+                    <p>Share your thoughts and suggestions to help us improve our hostel services</p>
+                </div>
+                <div class="card-content">
+                    <form id="feedbackForm">
+                        <div class="rating-section">
+                            <label class="rating-label">Overall Rating</label>
+                            <div class="star-rating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <p id="rating-text" class="rating-text"></p>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="anonymous" name="anonymous">
+                            <label for="anonymous">Submit feedback anonymously</label>
+                        </div>
+
+                        <div id="student-details" class="form-grid">
+                            <div class="form-group">
+                                <label for="student-name">Student Name</label>
+                                <input type="text" id="student-name" name="name" placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="student-rollNo">Roll Number</label>
+                                <input type="text" id="student-rollNo" name="rollNo" placeholder="Enter your roll number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedback-text">Your Feedback *</label>
+                            <textarea id="feedback-text" name="feedback" required 
+                                placeholder="Please share your thoughts about hostel facilities, services, food, cleanliness, staff behavior, or any suggestions for improvement..."></textarea>
+                            <p class="help-text">Be specific about your experience to help us serve you better.</p>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="success-message" class="card success-card" style="display: none;">
+                <div class="card-header">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22,4 12,14.01 9,11.01"/>
+                        </svg>
+                    </div>
+                    <h2>Feedback Submitted!</h2>
+                    <p>Thank you for helping us improve our hostel services.</p>
+                </div>
+                <div class="card-content">
+                    <p class="note">Your feedback has been recorded and will be reviewed by our management team.</p>
+                    <div class="button-group">
+                        <button onclick="resetForm()" class="btn-secondary">Submit Another</button>
+                        <button onclick="window.location.href='index.html'" class="btn-primary">Back to Home</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card info-card">
+                <div class="card-content">
+                    <h3>Feedback Guidelines</h3>
+                    <ul class="guidelines-list">
+                        <li>Be honest and constructive in your feedback</li>
+                        <li>Mention specific incidents or areas for improvement</li>
+                        <li>Your feedback helps us enhance the hostel experience for everyone</li>
+                        <li>Anonymous feedback is completely confidential</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="feedback.js"></script>
+</body>
+</html>

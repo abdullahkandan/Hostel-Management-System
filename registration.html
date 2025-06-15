@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - HostelManager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 21h18"/>
+                    <path d="M5 21V7l8-4v18"/>
+                    <path d="M19 21V11l-6-4"/>
+                </svg>
+                <span class="brand-text">HostelManager</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="registration.html" class="nav-link active">Registration</a>
+                <a href="fee-management.html" class="nav-link">Fee Management</a>
+                <a href="room-occupancy.html" class="nav-link">Room Occupancy</a>
+                <a href="feedback.html" class="nav-link">Feedback</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container">
+            <div id="registration-form" class="card">
+                <div class="card-header">
+                    <h2>Student Registration</h2>
+                    <p>Register for hostel accommodation and get your room allocated</p>
+                </div>
+                <div class="card-content">
+                    <form id="studentForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="rollNo">Roll Number *</label>
+                                <input type="text" id="rollNo" name="rollNo" required placeholder="Enter your roll number">
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="course">Course *</label>
+                                <select id="course" name="course" required>
+                                    <option value="">Select your course</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Arts">Arts</option>
+                                    <option value="Science">Science</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="year">Academic Year *</label>
+                                <select id="year" name="year" required>
+                                    <option value="">Select your year</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roomPreference">Room Preference (Optional)</label>
+                            <select id="roomPreference" name="roomPreference">
+                                <option value="">Select preferred room (if available)</option>
+                                <option value="A101">Room A101</option>
+                                <option value="A102">Room A102</option>
+                                <option value="A103">Room A103</option>
+                                <option value="B201">Room B201</option>
+                                <option value="B202">Room B202</option>
+                                <option value="B203">Room B203</option>
+                                <option value="C301">Room C301</option>
+                                <option value="C302">Room C302</option>
+                                <option value="C303">Room C303</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Register & Allocate Room</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="success-message" class="card success-card" style="display: none;">
+                <div class="card-header">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22,4 12,14.01 9,11.01"/>
+                        </svg>
+                    </div>
+                    <h2>Registration Complete!</h2>
+                    <p id="welcome-message">Welcome to the hostel!</p>
+                </div>
+                <div class="card-content">
+                    <div class="room-allocation">
+                        <p>Your Allocated Room:</p>
+                        <p id="allocated-room" class="room-number"></p>
+                    </div>
+                    <p class="note">Please note down your room number and report to the hostel office for key collection.</p>
+                    <button onclick="window.location.href='index.html'" class="btn-primary">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="registration.js"></script>
+</body>
+</html>
